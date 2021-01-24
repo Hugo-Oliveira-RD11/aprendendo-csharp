@@ -32,6 +32,8 @@ class Aula23{
         }
         System.Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         //copy to
+
+        
         vetor.CopyTo(vetor2,0);
         
         for (int i=0;i<vetor2.Length;i++){
