@@ -1,7 +1,7 @@
+//aqui aprendi que a gento so passa o valor da variavel, não ela em si, para passar ela tem que usar o ref na função e na chamada da função!
 using System;
 
 class Aula25{
-//aqui aprendi que a gento so passa o valor da variavel, não ela em si, para passar ela tem que usar o ref na função e na chamada da função!
 
 
     static void Main(){
