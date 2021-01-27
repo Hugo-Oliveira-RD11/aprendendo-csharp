@@ -5,12 +5,17 @@ public class Player{
     public int life,balas;
     public bool vivo,colete;
     public string nome;
+    
     public Player(){
         life=100;
         balas=0;
         vivo=true;
         colete=false;
         nome="lidão!";
+    }
+    
+    ~Player(){
+        System.Console.WriteLine(" o player {0} foi destruido!",nome);
     }
 
 }
