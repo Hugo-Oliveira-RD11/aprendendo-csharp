@@ -1,0 +1,3 @@
+//eu entendi dessa aula, que para eu acessar o construtor de outra classe, eu tenho que o base(), no construtor da minha classe,
+//tambem aprendir sobre o operador ternario, mas eu so executei isso na aula passada... na linha 30!
+//eu so n fiz nada, pois n tive nem uma ideia do que fazer, foi mal...

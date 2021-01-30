@@ -27,12 +27,7 @@ class Carro : Veiculo{
     kmh(velocidade);
     }
     public bool estado(bool ligado){
-        if(ligado == true){
-            return this.ligado=true;
-            
-        }else{
-            return this.ligado=false;
-        }
+        return (ligado?this.ligado=ligado:this.ligado=false);
     }
     public bool SetLigado(){
         return ligado;
