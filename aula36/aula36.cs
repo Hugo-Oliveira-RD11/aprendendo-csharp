@@ -1,7 +1,7 @@
 //public pode ser acessodo por geral..
 //private pode ser acessado so pela propria classe
 //protected pode ser acessado pela propria classe, e de quem herdar ela(a sua propria classe)
-
+//um dia eu voltou aqui pra terminar o projeto!
 using System;
 
 class Pc{
@@ -19,7 +19,16 @@ class Pc{
 
     public string SetPlaca_mae(){
         return placa_mae;
+        
     }
+        public void mostrar(){
+        
+            System.Console.Write("o seu teclado e {0}\nsua tv/monitor e {1}\nseu mouse e {2}\nsua cadeira e {3}\n",this.teclado,this.monitor,this.mouse,this.cadeira);
+            System.Console.Write("o seu pc tem uma gabinete de {0}\nprocessador {1}\nplaca mãe {2}",this.gabinete,this.processador,this.placa_mae);
+            System.Console.WriteLine("obrigado pela sua compra!\nvolte sempre");
+            Environment.Exit(0);
+        
+        }
 
 
     
@@ -27,7 +36,7 @@ class Pc{
         this.gabinete=gabinete;
         this.processador=processador;
         this.placa_mae=placa_mae;
-
+        mostrar();
     
     }
 
@@ -43,20 +52,20 @@ class Desktop:Pc{
         this.monitor=monitor;
         this.mouse=mouse;
         this.cadeira=cadeira;
-
-
-
-
+        mostrar2();
+        
     }
-
+    
+    public void mostrar2(){
+        System.Console.Write("o seu teclado e {0}\nsua tv/monitor e {1}\nseu mouse e {2}\nsua cadeira e {3}\n",this.teclado,this.monitor,this.mouse,this.cadeira);
+        System.Console.WriteLine("obrigado pela sua compra!\nvolte sempre");
+        Environment.Exit(0);
+    }
 }
 
 class Aula36{
     static void Main(){
         confi_desktop();
-        Console.WriteLine("o seu teclado e {0}\nsua tv/monitor e {1}\nseu mouse e {2}\nsua cadeira e {3}\n\nvc escolheu o pc com :\n{4}\n{5}\n{6}",MyDektop.teclado);
-
-        
 
     }
 
@@ -78,9 +87,10 @@ class Aula36{
         System.Console.Write("qual cadeira vc quer ?");
         cadeira=System.Console.ReadLine();
 
-        while((opcao != 'S') && (opcao != 'N') ){
+        while((opcao != 'S') && (opcao != 'N') && (opcao != 's') && (opcao != 'n')){
             System.Console.Write("vc que um pc ?[S/n]");
             opcao=Convert.ToChar(System.Console.ReadLine());
+            
         }
         switch(opcao){
             case 'S':
@@ -88,15 +98,10 @@ class Aula36{
                 confi_pc();
                 break;
             default:
-                System.Console.WriteLine("obrigado pela sua compra!\nvolte sempre");
+                Desktop MyDesktop=new Desktop(teclado,monitor,mouse,cadeira,lixo);    
                 break;
         }
-        
-        Desktop MyDesktop=new Desktop(teclado,monitor,mouse,cadeira,lixo);
-        
-
     }
-
 
     static void confi_pc(){
 
@@ -112,6 +117,6 @@ class Aula36{
         gabinete=System.Console.ReadLine();
         
         Pc Mypc=new Pc(gabinete,processador,placa_mae);
-            
-}
+
+    }
 }
