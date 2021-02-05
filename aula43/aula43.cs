@@ -1,3 +1,6 @@
+//hoje eu aprendi que o Main(metodo/funcao),nao precisa ficar em uma classe separada, 
+//e sobre o interface, que e como se fosse uma base para as classes que vão herdar ele
+
 using System;
 interface Player
 {
@@ -7,8 +10,8 @@ interface Player
 }
 interface Armas
 {
-    public void balas();
-    public void pistola();
+    public int balas(int balas);
+    public int pistola(int pistola);
 }
 
 class Jogo:Player,Armas
@@ -16,7 +19,7 @@ class Jogo:Player,Armas
     static void Main()
     {
         Jogo partida1=new Jogo();
-        System.Console.WriteLine( "a sua é {0}\n{1}",partida1.vida(50),partida1.estamina(30));
+        System.Console.WriteLine( "a sua é {0}\na sua estamina é {1}\na sua munição é {2}\na quantidade de armas são {3}",partida1.vida(-1),partida1.estamina(-1),partida1.balas(-1),partida1.pistola(-1));
     }
     public int life;
     public int vida(int vida){
@@ -38,6 +41,29 @@ class Jogo:Player,Armas
             return folego=0;
         }else{
             return folego=estamina;
+        }
+    }
+
+    public int municao;
+    public int balas(int balas){
+        if(balas > 1000){
+            return municao=1000;
+        }else if(balas < 0){
+            return municao = 0;
+        }else
+        {
+            return municao=balas;
+        }
+    }
+
+    public int arma;
+    public int pistola(int pistola){
+        if(pistola>4){
+            return arma=4;
+        }else if(pistola<0){
+            return arma=0;
+        }else{
+            return arma=pistola;
         }
     }
 
